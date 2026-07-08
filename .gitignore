@@ -1,0 +1,16 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.Rproj
+.DS_Store
+/docs
+/*.Rcheck
+*.tar.gz
+inst/doc
+
+# Secrets — never commit
+.env
+.env.*
+*.env
+inst/**/.env*

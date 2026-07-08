@@ -1,0 +1,55 @@
+Package: metasurvey.worker
+Title: Deployable API Server and Compute Worker for 'metasurvey'
+Version: 0.1.0
+URL: https://metasurveyr.github.io/metasurvey.worker/,
+    https://github.com/metasurveyr/metasurvey.worker
+BugReports: https://github.com/metasurveyr/metasurvey.worker/issues
+Authors@R:
+    c(
+        person(
+            given = "Mauro",
+            family = "Loprete",
+            role = c("aut", "cre"),
+            email = "mauro.loprete@icloud.com",
+            comment = c(ORCID = "0000-0003-1560-0183")
+        ),
+        person(
+            given = "Natalia",
+            family = "da Silva",
+            role = "aut",
+            email = "natalia.dasilva@fcea.edu.uy",
+            comment = c(ORCID = "0000-0002-6031-7451")
+        ),
+        person(
+            given = "Fabricio",
+            family = "Machado",
+            role = "aut",
+            email = "fabricio.mch.slv@gmail.com",
+            comment = c(ORCID = "0009-0008-2653-9166")
+        )
+    )
+Description: Server-side infrastructure for the 'metasurvey' ecosystem: a
+    'plumber' REST API (backed by MongoDB) for recipe and workflow storage, and
+    a compute worker that bakes recipes and runs workflows over private
+    microdata. These are deployable services (Docker, Railway, Cloud Run), not a
+    user-facing R package; the R client lives in 'metasurvey.explorer.backend'.
+License: GPL (>= 3)
+Depends:
+    R (>= 4.1)
+Suggests:
+    metasurvey.core,
+    plumber,
+    mongolite,
+    jose,
+    digest,
+    jsonlite (>= 1.7.2),
+    survey (>= 4.2.1),
+    data.table (>= 1.14.2),
+    testthat (>= 3.0.0)
+Remotes:
+    metasurveyr/metasurvey.core
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0

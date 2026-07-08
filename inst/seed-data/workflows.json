@@ -1,0 +1,253 @@
+[
+  {
+    "id": "ech_wf_labor",
+    "name": "Mercado Laboral ECH (ech)",
+    "description": "Tasas de actividad, empleo, desempleo y subempleo. Desagregaciones por edad y rama CIIU.",
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li",
+      "url": "https://orcid.org/0000-0003-3965-9024",
+      "verified": false
+    },
+    "survey_type": "ech",
+    "edition": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "estimation_type": "annual",
+    "recipe_ids": ["ech_pobpcoac_000", "ech_employment_001", "ech_underemployment_002", "ech_branch_ciiu_003", "ech_age_groups_013"],
+    "calls": [
+      "svymean(~pea, design, na.rm=TRUE)",
+      "svymean(~po, design, na.rm=TRUE)",
+      "svymean(~pd, design, na.rm=TRUE)",
+      "svymean(~underemployment, design, na.rm=TRUE)",
+      "svyby(~po, ~age_groups, design, svymean, na.rm=TRUE)",
+      "svyby(~po, ~branch_ciiu, design, svymean, na.rm=TRUE)"
+    ],
+    "call_metadata": [
+      {
+        "type": "svymean",
+        "formula": "~pea",
+        "description": "Tasa de actividad"
+      },
+      {
+        "type": "svymean",
+        "formula": "~po",
+        "description": "Tasa de empleo"
+      },
+      {
+        "type": "svymean",
+        "formula": "~pd",
+        "description": "Tasa de desempleo"
+      },
+      {
+        "type": "svymean",
+        "formula": "~underemployment",
+        "description": "Tasa de subempleo"
+      },
+      {
+        "type": "svyby",
+        "formula": "~po",
+        "by": "~age_groups",
+        "description": "Empleo por grupo de edad"
+      },
+      {
+        "type": "svyby",
+        "formula": "~po",
+        "by": "~branch_ciiu",
+        "description": "Empleo por rama CIIU"
+      }
+    ],
+    "categories": [],
+    "downloads": 0,
+    "certification": {
+      "level": "community",
+      "certified_at": "2026-02-15 01:25:27.068914"
+    },
+    "version": "1.0.0",
+    "doi": null,
+    "created_at": "2026-02-15T01:25:27"
+  },
+  {
+    "id": "ech_wf_poverty",
+    "name": "Pobreza y Desigualdad ECH (ech)",
+    "description": "Pobreza, indigencia, NBI y medida integrada. Desagregacion por quintil.",
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li",
+      "url": "https://orcid.org/0000-0003-3965-9024",
+      "verified": false
+    },
+    "survey_type": "ech",
+    "edition": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "estimation_type": "annual",
+    "recipe_ids": ["ech_income_prices_004", "ech_quantiles_005", "ech_poverty_007", "ech_nbi_008", "ech_integrated_poverty_009"],
+    "calls": [
+      "svymean(~poor, design, na.rm=TRUE)",
+      "svymean(~indigent, design, na.rm=TRUE)",
+      "svymean(~UBN, design, na.rm=TRUE)",
+      "svymean(~y_pc_d, design, na.rm=TRUE)",
+      "svyby(~poor, ~quintil, design, svymean, na.rm=TRUE)",
+      "svymean(~integrated_poverty_measure, design, na.rm=TRUE)"
+    ],
+    "call_metadata": [
+      {
+        "type": "svymean",
+        "formula": "~poor",
+        "description": "Tasa de pobreza"
+      },
+      {
+        "type": "svymean",
+        "formula": "~indigent",
+        "description": "Tasa de indigencia"
+      },
+      {
+        "type": "svymean",
+        "formula": "~UBN",
+        "description": "Porcentaje hogares con al menos 1 NBI"
+      },
+      {
+        "type": "svymean",
+        "formula": "~y_pc_d",
+        "description": "Ingreso per capita promedio (constante)"
+      },
+      {
+        "type": "svyby",
+        "formula": "~poor",
+        "by": "~quintil",
+        "description": "Pobreza por quintil de ingreso"
+      },
+      {
+        "type": "svymean",
+        "formula": "~integrated_poverty_measure",
+        "description": "Medida integrada: cronica/reciente/inercial"
+      }
+    ],
+    "categories": [],
+    "downloads": 0,
+    "certification": {
+      "level": "community",
+      "certified_at": "2026-02-15 01:25:27.068914"
+    },
+    "version": "1.0.0",
+    "doi": null,
+    "created_at": "2026-02-15T01:25:27"
+  },
+  {
+    "id": "ech_wf_education",
+    "name": "Perfil Educativo ECH (ech)",
+    "description": "Escolaridad, nivel educativo y asistencia. Desagregacion por quintil.",
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li",
+      "url": "https://orcid.org/0000-0003-3965-9024",
+      "verified": false
+    },
+    "survey_type": "ech",
+    "edition": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "estimation_type": "annual",
+    "recipe_ids": ["ech_education_010", "ech_quantiles_005", "ech_age_groups_013"],
+    "calls": [
+      "svymean(~years_schooling, design, na.rm=TRUE)",
+      "svymean(~level_education, design, na.rm=TRUE)",
+      "svymean(~school_enrollment, design, na.rm=TRUE)",
+      "svyby(~years_schooling, ~quintil, design, svymean, na.rm=TRUE)",
+      "svymean(~primary_completion, design, na.rm=TRUE)"
+    ],
+    "call_metadata": [
+      {
+        "type": "svymean",
+        "formula": "~years_schooling",
+        "description": "Anos de escolaridad promedio"
+      },
+      {
+        "type": "svymean",
+        "formula": "~level_education",
+        "description": "Distribucion por nivel educativo"
+      },
+      {
+        "type": "svymean",
+        "formula": "~school_enrollment",
+        "description": "Tasa de asistencia escolar"
+      },
+      {
+        "type": "svyby",
+        "formula": "~years_schooling",
+        "by": "~quintil",
+        "description": "Escolaridad por quintil de ingreso"
+      },
+      {
+        "type": "svymean",
+        "formula": "~primary_completion",
+        "description": "Tasa de completitud primaria"
+      }
+    ],
+    "categories": [],
+    "downloads": 0,
+    "certification": {
+      "level": "community",
+      "certified_at": "2026-02-15 01:25:27.068914"
+    },
+    "version": "1.0.0",
+    "doi": null,
+    "created_at": "2026-02-15T01:25:27"
+  },
+  {
+    "id": "ech_wf_housing",
+    "name": "Condiciones Habitacionales ECH (ech)",
+    "description": "Tenencia, hacinamiento y privacion habitacional. Desagregacion por quintil.",
+    "user": "richard.detomasi@gmail.com",
+    "user_info": {
+      "name": "Richard Detomasi",
+      "user_type": "individual",
+      "email": "richard.detomasi@gmail.com",
+      "url": "https://orcid.org/0000-0002-6725-0261",
+      "verified": false
+    },
+    "survey_type": "ech",
+    "edition": ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024"],
+    "estimation_type": "annual",
+    "recipe_ids": ["ech_housing_011", "ech_quantiles_005"],
+    "calls": [
+      "svymean(~housing_tenure, design, na.rm=TRUE)",
+      "svymean(~overcrowding, design, na.rm=TRUE)",
+      "svymean(~housing_deprivation, design, na.rm=TRUE)",
+      "svyby(~housing_deprivation, ~quintil, design, svymean, na.rm=TRUE)"
+    ],
+    "call_metadata": [
+      {
+        "type": "svymean",
+        "formula": "~housing_tenure",
+        "description": "Distribucion tipo tenencia"
+      },
+      {
+        "type": "svymean",
+        "formula": "~overcrowding",
+        "description": "Hacinamiento promedio"
+      },
+      {
+        "type": "svymean",
+        "formula": "~housing_deprivation",
+        "description": "Tasa de privacion habitacional"
+      },
+      {
+        "type": "svyby",
+        "formula": "~housing_deprivation",
+        "by": "~quintil",
+        "description": "Privacion por quintil de ingreso"
+      }
+    ],
+    "categories": [],
+    "downloads": 0,
+    "certification": {
+      "level": "community",
+      "certified_at": "2026-02-15 01:25:27.068914"
+    },
+    "version": "1.0.0",
+    "doi": null,
+    "created_at": "2026-02-15T01:25:27"
+  }
+]

@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: metasurvey-api
+    runtime: docker
+    dockerfilePath: ./inst/api/Dockerfile
+    dockerContext: ./inst/api
+    plan: free
+    envVars:
+      - key: METASURVEY_MONGO_URI
+        sync: false
+      - key: METASURVEY_JWT_SECRET
+        generateValue: true
+      - key: METASURVEY_DB
+        value: metasurvey
+      - key: METASURVEY_ADMIN_EMAIL
+        sync: false
+      - key: METASURVEY_ENABLE_INDICATORS
+        value: "0"
+      - key: METASURVEY_ENABLE_WORKER
+        value: "0"
+      - key: REDIS_URL
+        sync: false
+      - key: METASURVEY_ENABLE_ASYNC
+        value: "0"

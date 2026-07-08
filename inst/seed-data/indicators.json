@@ -1,0 +1,89 @@
+[
+  {
+    "id": "ind_ech_unemployment_2024",
+    "name": "Tasa de desempleo 2024",
+    "description": "Tasa de desempleo anual, poblacion de 14 anos y mas",
+    "recipe_id": "ech_employment_001",
+    "workflow_id": "ech_wf_labor",
+    "survey_type": "ech",
+    "edition": "2024",
+    "estimation_type": "annual",
+    "stat": "svymean: pd",
+    "value": 0.082,
+    "se": 0.003,
+    "cv": 0.037,
+    "confint_lower": 0.076,
+    "confint_upper": 0.088,
+    "metadata": {
+      "formula": "~pd",
+      "estimation_function": "svymean",
+      "notes": "Poblacion de 14 anos y mas"
+    },
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li"
+    },
+    "published_at": "2026-02-16T00:00:00Z",
+    "metasurvey_version": "0.0.16"
+  },
+  {
+    "id": "ind_ech_activity_rate_2024",
+    "name": "Tasa de actividad 2024",
+    "description": "Tasa de actividad anual, poblacion de 14 anos y mas",
+    "recipe_id": "ech_pobpcoac_000",
+    "workflow_id": "ech_wf_labor",
+    "survey_type": "ech",
+    "edition": "2024",
+    "estimation_type": "annual",
+    "stat": "svymean: pea",
+    "value": 0.632,
+    "se": 0.004,
+    "cv": 0.006,
+    "confint_lower": 0.624,
+    "confint_upper": 0.640,
+    "metadata": {
+      "formula": "~pea",
+      "estimation_function": "svymean",
+      "notes": "Poblacion Economicamente Activa / Poblacion en Edad de Trabajar"
+    },
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li"
+    },
+    "published_at": "2026-02-16T00:00:00Z",
+    "metasurvey_version": "0.0.16"
+  },
+  {
+    "id": "ind_ech_poverty_2024",
+    "name": "Tasa de pobreza 2024",
+    "description": "Porcentaje de personas bajo la linea de pobreza",
+    "recipe_id": "ech_poverty_004",
+    "workflow_id": "ech_wf_poverty",
+    "survey_type": "ech",
+    "edition": "2024",
+    "estimation_type": "annual",
+    "stat": "svymean: pobre",
+    "value": 0.104,
+    "se": 0.003,
+    "cv": 0.029,
+    "confint_lower": 0.098,
+    "confint_upper": 0.110,
+    "metadata": {
+      "formula": "~pobre",
+      "estimation_function": "svymean",
+      "notes": "Linea de pobreza INE 2006"
+    },
+    "user": "calcita@gmx.li",
+    "user_info": {
+      "name": "Gabriela Mathieu",
+      "user_type": "individual",
+      "email": "calcita@gmx.li"
+    },
+    "published_at": "2026-02-16T00:00:00Z",
+    "metasurvey_version": "0.0.16"
+  }
+]

@@ -1,0 +1,15 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.github$
+^\.lintr$
+^\.pre-commit-config\.yaml$
+^\.gitignore$
+^MIGRATION\.md$
+^LICENSE\.md$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^inst/api/\.dockerignore$
+^inst/api/\.env\.railway$
+^inst/worker/\.dockerignore$
+^inst/seed-data$

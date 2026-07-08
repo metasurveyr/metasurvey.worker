@@ -1,0 +1,35 @@
+[
+  {
+    "name": "Gabriela Mathieu",
+    "email": "calcita@gmx.li",
+    "password_hash": "97618ffad2fe1f21c9ebd1fdcff0d6e04f3ebb99ab3874af42144d269cfda029",
+    "user_type": "individual",
+    "institution": null,
+    "url": "https://orcid.org/0000-0003-3965-9024",
+    "verified": false,
+    "review_status": "approved",
+    "created_at": "2026-02-15T01:25:27Z"
+  },
+  {
+    "name": "Richard Detomasi",
+    "email": "richard.detomasi@gmail.com",
+    "password_hash": "97618ffad2fe1f21c9ebd1fdcff0d6e04f3ebb99ab3874af42144d269cfda029",
+    "user_type": "individual",
+    "institution": null,
+    "url": "https://orcid.org/0000-0002-6725-0261",
+    "verified": false,
+    "review_status": "approved",
+    "created_at": "2026-02-15T01:25:27Z"
+  },
+  {
+    "name": "Instituto de Economia (IECON)",
+    "email": "iecon@fcea.edu.uy",
+    "password_hash": "97618ffad2fe1f21c9ebd1fdcff0d6e04f3ebb99ab3874af42144d269cfda029",
+    "user_type": "institution",
+    "institution": "Universidad de la Republica - FCEA",
+    "url": "https://iecon.fcea.udelar.edu.uy",
+    "verified": true,
+    "review_status": "approved",
+    "created_at": "2026-02-16T00:00:00Z"
+  }
+]

@@ -1,0 +1,29 @@
+# metasurvey Plumber API
+# Build: docker build -t metasurvey-api .
+# Run:   docker run -p 8787:8787 -e METASURVEY_MONGO_URI="mongodb+srv://..." metasurvey-api
+
+FROM rocker/r2u:24.04
+
+# Install R packages as pre-compiled Ubuntu binaries (no compilation)
+# r2u resolves system dependencies automatically
+RUN install2.r --error --skipinstalled \
+    plumber mongolite jsonlite openssl jose digest sodium redux
+
+# curl for healthcheck
+RUN apt-get update && apt-get install -y --no-install-recommends curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Verify all packages load correctly
+RUN R -e "library(plumber); library(mongolite); library(jsonlite); library(jose); library(digest); library(redux); cat('All packages loaded OK\n')"
+
+# Copy API code
+COPY plumber.R /app/plumber.R
+
+# Healthcheck — hit /health every 30s
+HEALTHCHECK --interval=30s --timeout=5s --retries=3 --start-period=30s \
+  CMD curl -f http://localhost:8787/health || exit 1
+
+EXPOSE 8787
+
+# Run plumber on 0.0.0.0. PORT env var is set by Railway/Render.
+CMD ["R", "-e", "port <- as.integer(Sys.getenv('PORT', '8787')); plumber::plumb('/app/plumber.R')$run(host='0.0.0.0', port=port)"]
